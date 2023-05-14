@@ -140,6 +140,8 @@ public class lilToonPreset : ScriptableObject
         private bool shouldSaveMain = true;
         private bool shouldSaveMain2nd = true;
         private bool shouldSaveMain3rd = true;
+        private bool shouldSaveMain4th = true;
+        private bool shouldSaveMain5th = true;
         private bool shouldSaveAlphaMask = true;
         private bool shouldSaveShadow = true;
         private bool shouldSaveEmission = true;
@@ -180,6 +182,14 @@ public class lilToonPreset : ScriptableObject
         private bool shouldSave_Main3rdBlendMask = false;
         private bool shouldSave_Main3rdDissolveMask = false;
         private bool shouldSave_Main3rdDissolveNoiseMask = false;
+        private bool shouldSave_Main4thTex = false;
+        private bool shouldSave_Main4thBlendMask = false;
+        private bool shouldSave_Main4thDissolveMask = false;
+        private bool shouldSave_Main4thDissolveNoiseMask = false;
+        private bool shouldSave_Main5thTex = false;
+        private bool shouldSave_Main5thBlendMask = false;
+        private bool shouldSave_Main5thDissolveMask = false;
+        private bool shouldSave_Main5thDissolveNoiseMask = false;
         private bool shouldSave_AlphaMask = false;
         private bool shouldSave_ShadowStrengthMask = false;
         private bool shouldSave_ShadowBorderMask = false;
@@ -320,6 +330,8 @@ public class lilToonPreset : ScriptableObject
                 shouldSaveMain                      = EditorGUILayout.ToggleLeft(GetLoc("sMainColor"), shouldSaveMain);
                 shouldSaveMain2nd                   = EditorGUILayout.ToggleLeft(GetLoc("sMainColor2nd"), shouldSaveMain2nd);
                 shouldSaveMain3rd                   = EditorGUILayout.ToggleLeft(GetLoc("sMainColor3rd"), shouldSaveMain3rd);
+                shouldSaveMain4th                   = EditorGUILayout.ToggleLeft(GetLoc("sMainColor4th"), shouldSaveMain4th);
+                shouldSaveMain5th                   = EditorGUILayout.ToggleLeft(GetLoc("sMainColor5th"), shouldSaveMain5th);
                 shouldSaveAlphaMask                 = EditorGUILayout.ToggleLeft(GetLoc("sAlphaMask"), shouldSaveAlphaMask);
                 shouldSaveShadow                    = EditorGUILayout.ToggleLeft(GetLoc("sShadow"), shouldSaveShadow);
                 shouldSaveEmission                  = EditorGUILayout.ToggleLeft(GetLoc("sEmission"), shouldSaveEmission);
@@ -511,6 +523,8 @@ public class lilToonPreset : ScriptableObject
                     shouldSaveMain && lilPropertyNameChecker.IsMainProperty(propName) ||
                     shouldSaveMain2nd && lilPropertyNameChecker.IsMain2ndProperty(propName) ||
                     shouldSaveMain3rd && lilPropertyNameChecker.IsMain3rdProperty(propName) ||
+                    shouldSaveMain4th && lilPropertyNameChecker.IsMain4thProperty(propName) ||
+                    shouldSaveMain5th && lilPropertyNameChecker.IsMain5thProperty(propName) ||
                     shouldSaveAlphaMask && lilPropertyNameChecker.IsAlphaMaskProperty(propName) ||
                     shouldSaveShadow && lilPropertyNameChecker.IsShadowProperty(propName) ||
                     shouldSaveEmission && lilPropertyNameChecker.IsEmissionProperty(propName) ||
@@ -578,6 +592,14 @@ public class lilToonPreset : ScriptableObject
             if(shouldSave_Main3rdBlendMask) CopyTextureToPreset(material, "_Main3rdBlendMask");
             if(shouldSave_Main3rdDissolveMask) CopyTextureToPreset(material, "_Main3rdDissolveMask");
             if(shouldSave_Main3rdDissolveNoiseMask) CopyTextureToPreset(material, "_Main3rdDissolveNoiseMask");
+            if(shouldSave_Main4thTex) CopyTextureToPreset(material, "_Main4thTex");
+            if(shouldSave_Main4thBlendMask) CopyTextureToPreset(material, "_Main4thBlendMask");
+            if(shouldSave_Main4thDissolveMask) CopyTextureToPreset(material, "_Main4thDissolveMask");
+            if(shouldSave_Main4thDissolveNoiseMask) CopyTextureToPreset(material, "_Main4thDissolveNoiseMask");
+            if(shouldSave_Main5thTex) CopyTextureToPreset(material, "_Main5thTex");
+            if(shouldSave_Main5thBlendMask) CopyTextureToPreset(material, "_Main5thBlendMask");
+            if(shouldSave_Main5thDissolveMask) CopyTextureToPreset(material, "_Main5thDissolveMask");
+            if(shouldSave_Main5thDissolveNoiseMask) CopyTextureToPreset(material, "_Main5thDissolveNoiseMask");
             if(shouldSave_AlphaMask) CopyTextureToPreset(material, "_AlphaMask");
             if(shouldSave_ShadowStrengthMask) CopyTextureToPreset(material, "_ShadowStrengthMask");
             if(shouldSave_ShadowBorderMask) CopyTextureToPreset(material, "_ShadowBorderMask");
@@ -641,6 +663,8 @@ public class lilToonPreset : ScriptableObject
             shouldSaveMain = val;
             shouldSaveMain2nd = val;
             shouldSaveMain3rd = val;
+            shouldSaveMain4th = val;
+            shouldSaveMain5th = val;
             shouldSaveAlphaMask = val;
             shouldSaveShadow = val;
             shouldSaveEmission = val;
@@ -683,6 +707,14 @@ public class lilToonPreset : ScriptableObject
             shouldSave_Main3rdBlendMask = val;
             shouldSave_Main3rdDissolveMask = val;
             shouldSave_Main3rdDissolveNoiseMask = val;
+            shouldSave_Main4thTex = val;
+            shouldSave_Main4thBlendMask = val;
+            shouldSave_Main4thDissolveMask = val;
+            shouldSave_Main4thDissolveNoiseMask = val;
+            shouldSave_Main5thTex = val;
+            shouldSave_Main5thBlendMask = val;
+            shouldSave_Main5thDissolveMask = val;
+            shouldSave_Main5thDissolveNoiseMask = val;
             shouldSave_AlphaMask = val;
             shouldSave_ShadowStrengthMask = val;
             shouldSave_ShadowBorderMask = val;

@@ -22,6 +22,8 @@ public class lilToonSetting : ScriptableObject
     public bool LIL_FEATURE_MAIN_GRADATION_MAP = true;
     public bool LIL_FEATURE_MAIN2ND = true;
     public bool LIL_FEATURE_MAIN3RD = true;
+    public bool LIL_FEATURE_MAIN4TH = true;
+    public bool LIL_FEATURE_MAIN5TH = true;
     public bool LIL_FEATURE_DECAL = true;
     public bool LIL_FEATURE_ANIMATE_DECAL = true;
     public bool LIL_FEATURE_LAYER_DISSOLVE = true;
@@ -71,6 +73,14 @@ public class lilToonSetting : ScriptableObject
     public bool LIL_FEATURE_Main3rdBlendMask = true;
     public bool LIL_FEATURE_Main3rdDissolveMask = true;
     public bool LIL_FEATURE_Main3rdDissolveNoiseMask = true;
+    public bool LIL_FEATURE_Main4thTex = true;
+    public bool LIL_FEATURE_Main4thBlendMask = true;
+    public bool LIL_FEATURE_Main4thDissolveMask = true;
+    public bool LIL_FEATURE_Main4thDissolveNoiseMask = true;
+    public bool LIL_FEATURE_Main5thTex = true;
+    public bool LIL_FEATURE_Main5thBlendMask = true;
+    public bool LIL_FEATURE_Main5thDissolveMask = true;
+    public bool LIL_FEATURE_Main5thDissolveNoiseMask = true;
     public bool LIL_FEATURE_AlphaMask = true;
     public bool LIL_FEATURE_BumpMap = true;
     public bool LIL_FEATURE_Bump2ndMap = true;
@@ -236,6 +246,8 @@ public class lilToonSetting : ScriptableObject
         shaderSetting.LIL_FEATURE_MAIN_GRADATION_MAP = false;
         shaderSetting.LIL_FEATURE_MAIN2ND = false;
         shaderSetting.LIL_FEATURE_MAIN3RD = false;
+        shaderSetting.LIL_FEATURE_MAIN4TH = false;
+        shaderSetting.LIL_FEATURE_MAIN5TH = false;
         shaderSetting.LIL_FEATURE_DECAL = false;
         shaderSetting.LIL_FEATURE_ANIMATE_DECAL = false;
         shaderSetting.LIL_FEATURE_LAYER_DISSOLVE = false;
@@ -285,6 +297,14 @@ public class lilToonSetting : ScriptableObject
         shaderSetting.LIL_FEATURE_Main3rdBlendMask = false;
         shaderSetting.LIL_FEATURE_Main3rdDissolveMask = false;
         shaderSetting.LIL_FEATURE_Main3rdDissolveNoiseMask = false;
+        shaderSetting.LIL_FEATURE_Main4thTex = false;
+        shaderSetting.LIL_FEATURE_Main4thBlendMask = false;
+        shaderSetting.LIL_FEATURE_Main4thDissolveMask = false;
+        shaderSetting.LIL_FEATURE_Main4thDissolveNoiseMask = false;
+        shaderSetting.LIL_FEATURE_Main5thTex = false;
+        shaderSetting.LIL_FEATURE_Main5thBlendMask = false;
+        shaderSetting.LIL_FEATURE_Main5thDissolveMask = false;
+        shaderSetting.LIL_FEATURE_Main5thDissolveNoiseMask = false;
         shaderSetting.LIL_FEATURE_AlphaMask = false;
         shaderSetting.LIL_FEATURE_BumpMap = false;
         shaderSetting.LIL_FEATURE_Bump2ndMap = false;
@@ -344,6 +364,8 @@ public class lilToonSetting : ScriptableObject
         shaderSetting.LIL_FEATURE_MAIN_GRADATION_MAP = true;
         shaderSetting.LIL_FEATURE_MAIN2ND = true;
         shaderSetting.LIL_FEATURE_MAIN3RD = true;
+        shaderSetting.LIL_FEATURE_MAIN4TH = true;
+        shaderSetting.LIL_FEATURE_MAIN5TH = true;
         shaderSetting.LIL_FEATURE_DECAL = true;
         shaderSetting.LIL_FEATURE_ANIMATE_DECAL = true;
         shaderSetting.LIL_FEATURE_LAYER_DISSOLVE = true;
@@ -396,6 +418,14 @@ public class lilToonSetting : ScriptableObject
             shaderSetting.LIL_FEATURE_Main3rdBlendMask = true;
             shaderSetting.LIL_FEATURE_Main3rdDissolveMask = true;
             shaderSetting.LIL_FEATURE_Main3rdDissolveNoiseMask = true;
+            shaderSetting.LIL_FEATURE_Main4thTex = true;
+            shaderSetting.LIL_FEATURE_Main4thBlendMask = true;
+            shaderSetting.LIL_FEATURE_Main4thDissolveMask = true;
+            shaderSetting.LIL_FEATURE_Main4thDissolveNoiseMask = true;
+            shaderSetting.LIL_FEATURE_Main5thTex = true;
+            shaderSetting.LIL_FEATURE_Main5thBlendMask = true;
+            shaderSetting.LIL_FEATURE_Main5thDissolveMask = true;
+            shaderSetting.LIL_FEATURE_Main5thDissolveNoiseMask = true;
             shaderSetting.LIL_FEATURE_AlphaMask = true;
             shaderSetting.LIL_FEATURE_BumpMap = true;
             shaderSetting.LIL_FEATURE_Bump2ndMap = true;
@@ -519,7 +549,9 @@ public class lilToonSetting : ScriptableObject
         if(shaderSetting.LIL_FEATURE_MAIN_GRADATION_MAP) sb.AppendLine("#define LIL_FEATURE_MAIN_GRADATION_MAP");
         if(shaderSetting.LIL_FEATURE_MAIN2ND) sb.AppendLine("#define LIL_FEATURE_MAIN2ND");
         if(shaderSetting.LIL_FEATURE_MAIN3RD) sb.AppendLine("#define LIL_FEATURE_MAIN3RD");
-        if(shaderSetting.LIL_FEATURE_MAIN2ND || shaderSetting.LIL_FEATURE_MAIN3RD)
+        if(shaderSetting.LIL_FEATURE_MAIN4TH) sb.AppendLine("#define LIL_FEATURE_MAIN4TH");
+        if(shaderSetting.LIL_FEATURE_MAIN5TH) sb.AppendLine("#define LIL_FEATURE_MAIN5TH");
+        if(shaderSetting.LIL_FEATURE_MAIN2ND || shaderSetting.LIL_FEATURE_MAIN3RD || shaderSetting.LIL_FEATURE_MAIN4TH || shaderSetting.LIL_FEATURE_MAIN5TH)
         {
             if(shaderSetting.LIL_FEATURE_DECAL) sb.AppendLine("#define LIL_FEATURE_DECAL");
             if(shaderSetting.LIL_FEATURE_ANIMATE_DECAL) sb.AppendLine("#define LIL_FEATURE_ANIMATE_DECAL");
@@ -589,6 +621,14 @@ public class lilToonSetting : ScriptableObject
         if(shaderSetting.LIL_FEATURE_Main3rdBlendMask)           sb.AppendLine("#define LIL_FEATURE_Main3rdBlendMask");
         if(shaderSetting.LIL_FEATURE_Main3rdDissolveMask)        sb.AppendLine("#define LIL_FEATURE_Main3rdDissolveMask");
         if(shaderSetting.LIL_FEATURE_Main3rdDissolveNoiseMask)   sb.AppendLine("#define LIL_FEATURE_Main3rdDissolveNoiseMask");
+        if(shaderSetting.LIL_FEATURE_Main4thTex)                 sb.AppendLine("#define LIL_FEATURE_Main4thTex");
+        if(shaderSetting.LIL_FEATURE_Main4thBlendMask)           sb.AppendLine("#define LIL_FEATURE_Main4thBlendMask");
+        if(shaderSetting.LIL_FEATURE_Main4thDissolveMask)        sb.AppendLine("#define LIL_FEATURE_Main4thDissolveMask");
+        if(shaderSetting.LIL_FEATURE_Main4thDissolveNoiseMask)   sb.AppendLine("#define LIL_FEATURE_Main4thDissolveNoiseMask");
+        if(shaderSetting.LIL_FEATURE_Main5thTex)                 sb.AppendLine("#define LIL_FEATURE_Main5thTex");
+        if(shaderSetting.LIL_FEATURE_Main5thBlendMask)           sb.AppendLine("#define LIL_FEATURE_Main5thBlendMask");
+        if(shaderSetting.LIL_FEATURE_Main5thDissolveMask)        sb.AppendLine("#define LIL_FEATURE_Main5thDissolveMask");
+        if(shaderSetting.LIL_FEATURE_Main5thDissolveNoiseMask)   sb.AppendLine("#define LIL_FEATURE_Main5thDissolveNoiseMask");
         if(shaderSetting.LIL_FEATURE_AlphaMask)                  sb.AppendLine("#define LIL_FEATURE_AlphaMask");
         if(shaderSetting.LIL_FEATURE_BumpMap)                    sb.AppendLine("#define LIL_FEATURE_BumpMap");
         if(shaderSetting.LIL_FEATURE_Bump2ndMap)                 sb.AppendLine("#define LIL_FEATURE_Bump2ndMap");
@@ -957,9 +997,21 @@ public class lilToonSetting : ScriptableObject
             Debug.Log("[lilToon] LIL_FEATURE_MAIN3RD : " + AssetDatabase.GetAssetPath(material));
             shaderSetting.LIL_FEATURE_MAIN3RD = true;
         }
+        if(!shaderSetting.LIL_FEATURE_MAIN4TH && material.HasProperty("_UseMain4thTex") && material.GetFloat("_UseMain4thTex") != 0.0f)
+        {
+            Debug.Log("[lilToon] LIL_FEATURE_MAIN4TH : " + AssetDatabase.GetAssetPath(material));
+            shaderSetting.LIL_FEATURE_MAIN4TH = true;
+        }
+        if(!shaderSetting.LIL_FEATURE_MAIN5TH && material.HasProperty("_UseMain5thTex") && material.GetFloat("_UseMain5thTex") != 0.0f)
+        {
+            Debug.Log("[lilToon] LIL_FEATURE_MAIN5TH : " + AssetDatabase.GetAssetPath(material));
+            shaderSetting.LIL_FEATURE_MAIN5TH = true;
+        }
         if(!shaderSetting.LIL_FEATURE_DECAL && (
             (material.HasProperty("_Main2ndTexIsDecal") && material.GetFloat("_Main2ndTexIsDecal") != 0.0f) ||
-            (material.HasProperty("_Main3rdTexIsDecal") && material.GetFloat("_Main3rdTexIsDecal") != 0.0f))
+            (material.HasProperty("_Main3rdTexIsDecal") && material.GetFloat("_Main3rdTexIsDecal") != 0.0f) ||
+            (material.HasProperty("_Main4thTexIsDecal") && material.GetFloat("_Main4thTexIsDecal") != 0.0f) ||
+            (material.HasProperty("_Main5thTexIsDecal") && material.GetFloat("_Main5thTexIsDecal") != 0.0f))
         )
         {
             Debug.Log("[lilToon] LIL_FEATURE_DECAL : " + AssetDatabase.GetAssetPath(material));
@@ -967,7 +1019,9 @@ public class lilToonSetting : ScriptableObject
         }
         if(!shaderSetting.LIL_FEATURE_ANIMATE_DECAL && (
             (material.HasProperty("_Main2ndTexDecalAnimation") && material.GetVector("_Main2ndTexDecalAnimation") != lilConstants.defaultDecalAnim) ||
-            (material.HasProperty("_Main3rdTexDecalAnimation") && material.GetVector("_Main3rdTexDecalAnimation") != lilConstants.defaultDecalAnim))
+            (material.HasProperty("_Main3rdTexDecalAnimation") && material.GetVector("_Main3rdTexDecalAnimation") != lilConstants.defaultDecalAnim) ||
+            (material.HasProperty("_Main4thTexDecalAnimation") && material.GetVector("_Main4thTexDecalAnimation") != lilConstants.defaultDecalAnim) ||
+            (material.HasProperty("_Main5thTexDecalAnimation") && material.GetVector("_Main5thTexDecalAnimation") != lilConstants.defaultDecalAnim))
         )
         {
             Debug.Log("[lilToon] LIL_FEATURE_ANIMATE_DECAL : " + AssetDatabase.GetAssetPath(material));
@@ -975,7 +1029,9 @@ public class lilToonSetting : ScriptableObject
         }
         if(!shaderSetting.LIL_FEATURE_LAYER_DISSOLVE && (
             (material.HasProperty("_Main2ndDissolveParams") && material.GetVector("_Main2ndDissolveParams").x != lilConstants.defaultDissolveParams.x) ||
-            (material.HasProperty("_Main3rdDissolveParams") && material.GetVector("_Main3rdDissolveParams").x != lilConstants.defaultDissolveParams.x))
+            (material.HasProperty("_Main3rdDissolveParams") && material.GetVector("_Main3rdDissolveParams").x != lilConstants.defaultDissolveParams.x) ||
+            (material.HasProperty("_Main4thDissolveParams") && material.GetVector("_Main4thDissolveParams").x != lilConstants.defaultDissolveParams.x) ||
+            (material.HasProperty("_Main5thDissolveParams") && material.GetVector("_Main5thDissolveParams").x != lilConstants.defaultDissolveParams.x))
         )
         {
             Debug.Log("[lilToon] LIL_FEATURE_LAYER_DISSOLVE : " + AssetDatabase.GetAssetPath(material));
@@ -1180,9 +1236,11 @@ public class lilToonSetting : ScriptableObject
             shaderSetting.LIL_FEATURE_MAIN_GRADATION_MAP = shaderSetting.LIL_FEATURE_MAIN_GRADATION_MAP || propname.Contains("_MainGradationStrength");
             shaderSetting.LIL_FEATURE_MAIN2ND = shaderSetting.LIL_FEATURE_MAIN2ND || propname.Contains("_UseMain2ndTex");
             shaderSetting.LIL_FEATURE_MAIN3RD = shaderSetting.LIL_FEATURE_MAIN3RD || propname.Contains("_UseMain3rdTex");
-            shaderSetting.LIL_FEATURE_DECAL = shaderSetting.LIL_FEATURE_DECAL || propname.Contains("_Main2ndTexIsDecal") || propname.Contains("_Main3rdTexIsDecal");
-            shaderSetting.LIL_FEATURE_ANIMATE_DECAL = shaderSetting.LIL_FEATURE_ANIMATE_DECAL || propname.Contains("_Main2ndTexDecalAnimation") || propname.Contains("_Main3rdTexDecalAnimation");
-            shaderSetting.LIL_FEATURE_LAYER_DISSOLVE = shaderSetting.LIL_FEATURE_LAYER_DISSOLVE || propname.Contains("_Main2ndDissolveParams") || propname.Contains("_Main3rdDissolveParams");
+            shaderSetting.LIL_FEATURE_MAIN4TH = shaderSetting.LIL_FEATURE_MAIN4TH || propname.Contains("_UseMain4thTex");
+            shaderSetting.LIL_FEATURE_MAIN5TH = shaderSetting.LIL_FEATURE_MAIN5TH || propname.Contains("_UseMain5thTex");
+            shaderSetting.LIL_FEATURE_DECAL = shaderSetting.LIL_FEATURE_DECAL || propname.Contains("_Main2ndTexIsDecal") || propname.Contains("_Main3rdTexIsDecal") || propname.Contains("_Main4thTexIsDecal") || propname.Contains("_Main5thTexIsDecal");
+            shaderSetting.LIL_FEATURE_ANIMATE_DECAL = shaderSetting.LIL_FEATURE_ANIMATE_DECAL || propname.Contains("_Main2ndTexDecalAnimation") || propname.Contains("_Main3rdTexDecalAnimation") || propname.Contains("_Main4thTexDecalAnimation") || propname.Contains("_Main5thTexDecalAnimation");
+            shaderSetting.LIL_FEATURE_LAYER_DISSOLVE = shaderSetting.LIL_FEATURE_LAYER_DISSOLVE || propname.Contains("_Main2ndDissolveParams") || propname.Contains("_Main3rdDissolveParams") || propname.Contains("_Main4thDissolveParams") || propname.Contains("_Main5thDissolveParams");
             shaderSetting.LIL_FEATURE_ALPHAMASK = shaderSetting.LIL_FEATURE_ALPHAMASK || propname.Contains("_AlphaMaskMode");
             shaderSetting.LIL_FEATURE_EMISSION_1ST = shaderSetting.LIL_FEATURE_EMISSION_1ST || propname.Contains("_UseEmission");
             shaderSetting.LIL_FEATURE_EMISSION_2ND = shaderSetting.LIL_FEATURE_EMISSION_2ND || propname.Contains("_UseEmission2nd");
@@ -1261,6 +1319,14 @@ public class lilToonSetting : ScriptableObject
         CheckTexture(ref shaderSetting.LIL_FEATURE_Main3rdBlendMask          , "_Main3rdBlendMask", material);
         CheckTexture(ref shaderSetting.LIL_FEATURE_Main3rdDissolveMask       , "_Main3rdDissolveMask", material);
         CheckTexture(ref shaderSetting.LIL_FEATURE_Main3rdDissolveNoiseMask  , "_Main3rdDissolveNoiseMask", material);
+        CheckTexture(ref shaderSetting.LIL_FEATURE_Main4thTex                , "_Main4thTex", material);
+        CheckTexture(ref shaderSetting.LIL_FEATURE_Main4thBlendMask          , "_Main4thBlendMask", material);
+        CheckTexture(ref shaderSetting.LIL_FEATURE_Main4thDissolveMask       , "_Main4thDissolveMask", material);
+        CheckTexture(ref shaderSetting.LIL_FEATURE_Main4thDissolveNoiseMask  , "_Main4thDissolveNoiseMask", material);
+        CheckTexture(ref shaderSetting.LIL_FEATURE_Main5thTex                , "_Main5thTex", material);
+        CheckTexture(ref shaderSetting.LIL_FEATURE_Main5thBlendMask          , "_Main5thBlendMask", material);
+        CheckTexture(ref shaderSetting.LIL_FEATURE_Main5thDissolveMask       , "_Main5thDissolveMask", material);
+        CheckTexture(ref shaderSetting.LIL_FEATURE_Main5thDissolveNoiseMask  , "_Main5thDissolveNoiseMask", material);
         CheckTexture(ref shaderSetting.LIL_FEATURE_AlphaMask                 , "_AlphaMask", material);
         CheckTexture(ref shaderSetting.LIL_FEATURE_BumpMap                   , "_BumpMap", material);
         CheckTexture(ref shaderSetting.LIL_FEATURE_Bump2ndMap                , "_Bump2ndMap", material);
@@ -1320,6 +1386,14 @@ public class lilToonSetting : ScriptableObject
         shaderSetting.LIL_FEATURE_Main3rdBlendMask           = shaderSetting.LIL_FEATURE_Main3rdBlendMask         || propname.Contains("_Main3rdBlendMask");
         shaderSetting.LIL_FEATURE_Main3rdDissolveMask        = shaderSetting.LIL_FEATURE_Main3rdDissolveMask      || propname.Contains("_Main3rdDissolveMask");
         shaderSetting.LIL_FEATURE_Main3rdDissolveNoiseMask   = shaderSetting.LIL_FEATURE_Main3rdDissolveNoiseMask || propname.Contains("_Main3rdDissolveNoiseMask");
+        shaderSetting.LIL_FEATURE_Main4thTex                 = shaderSetting.LIL_FEATURE_Main4thTex               || propname.Contains("_Main4thTex");
+        shaderSetting.LIL_FEATURE_Main4thBlendMask           = shaderSetting.LIL_FEATURE_Main4thBlendMask         || propname.Contains("_Main4thBlendMask");
+        shaderSetting.LIL_FEATURE_Main4thDissolveMask        = shaderSetting.LIL_FEATURE_Main4thDissolveMask      || propname.Contains("_Main4thDissolveMask");
+        shaderSetting.LIL_FEATURE_Main4thDissolveNoiseMask   = shaderSetting.LIL_FEATURE_Main4thDissolveNoiseMask || propname.Contains("_Main4thDissolveNoiseMask");
+        shaderSetting.LIL_FEATURE_Main5thTex                 = shaderSetting.LIL_FEATURE_Main5thTex               || propname.Contains("_Main5thTex");
+        shaderSetting.LIL_FEATURE_Main5thBlendMask           = shaderSetting.LIL_FEATURE_Main5thBlendMask         || propname.Contains("_Main5thBlendMask");
+        shaderSetting.LIL_FEATURE_Main5thDissolveMask        = shaderSetting.LIL_FEATURE_Main5thDissolveMask      || propname.Contains("_Main5thDissolveMask");
+        shaderSetting.LIL_FEATURE_Main5thDissolveNoiseMask   = shaderSetting.LIL_FEATURE_Main5thDissolveNoiseMask || propname.Contains("_Main5thDissolveNoiseMask");
         shaderSetting.LIL_FEATURE_AlphaMask                  = shaderSetting.LIL_FEATURE_AlphaMask                || propname.Contains("_AlphaMask");
         shaderSetting.LIL_FEATURE_BumpMap                    = shaderSetting.LIL_FEATURE_BumpMap                  || propname.Contains("_BumpMap");
         shaderSetting.LIL_FEATURE_Bump2ndMap                 = shaderSetting.LIL_FEATURE_Bump2ndMap               || propname.Contains("_Bump2ndMap");

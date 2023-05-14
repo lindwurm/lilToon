@@ -137,6 +137,10 @@ namespace lilToon
             public bool isShowMain2ndDissolveNoiseMask  = false;
             public bool isShowMain3rdDissolveMask       = false;
             public bool isShowMain3rdDissolveNoiseMask  = false;
+            public bool isShowMain4thDissolveMask       = false;
+            public bool isShowMain4thDissolveNoiseMask  = false;
+            public bool isShowMain5thDissolveMask       = false;
+            public bool isShowMain5thDissolveNoiseMask  = false;
             public bool isShowBumpMap                   = false;
             public bool isShowBump2ndMap                = false;
             public bool isShowBump2ndScaleMask          = false;
@@ -398,6 +402,64 @@ namespace lilToon
         private readonly lilMaterialProperty main3rdDissolveParams                  = new lilMaterialProperty("_Main3rdDissolveParams", PropertyBlock.MainColor, PropertyBlock.MainColor3rd);
         private readonly lilMaterialProperty main3rdDissolvePos                     = new lilMaterialProperty("_Main3rdDissolvePos", PropertyBlock.MainColor, PropertyBlock.MainColor3rd);
         private readonly lilMaterialProperty main3rdDistanceFade                    = new lilMaterialProperty("_Main3rdDistanceFade", PropertyBlock.MainColor, PropertyBlock.MainColor3rd);
+
+        private readonly lilMaterialProperty useMain4thTex                          = new lilMaterialProperty("_UseMain4thTex", PropertyBlock.MainColor, PropertyBlock.MainColor4th);
+        private readonly lilMaterialProperty mainColor4th                           = new lilMaterialProperty("_Color4th", PropertyBlock.MainColor, PropertyBlock.MainColor4th);
+        private readonly lilMaterialProperty main4thTexAngle                        = new lilMaterialProperty("_Main4thTexAngle", PropertyBlock.MainColor, PropertyBlock.MainColor4th);
+        private readonly lilMaterialProperty main4thTex_ScrollRotate                = new lilMaterialProperty("_Main4thTex_ScrollRotate", PropertyBlock.MainColor, PropertyBlock.MainColor4th);
+        private readonly lilMaterialProperty main4thTex                             = new lilMaterialProperty("_Main4thTex", true, PropertyBlock.MainColor, PropertyBlock.MainColor4th);
+        private readonly lilMaterialProperty main4thTex_UVMode                      = new lilMaterialProperty("_Main4thTex_UVMode", PropertyBlock.MainColor, PropertyBlock.MainColor4th);
+        private readonly lilMaterialProperty main4thTex_Cull                        = new lilMaterialProperty("_Main4thTex_Cull", PropertyBlock.MainColor, PropertyBlock.MainColor4th);
+        private readonly lilMaterialProperty main4thTexDecalAnimation               = new lilMaterialProperty("_Main4thTexDecalAnimation", PropertyBlock.MainColor, PropertyBlock.MainColor4th);
+        private readonly lilMaterialProperty main4thTexDecalSubParam                = new lilMaterialProperty("_Main4thTexDecalSubParam", PropertyBlock.MainColor, PropertyBlock.MainColor4th);
+        private readonly lilMaterialProperty main4thTexIsDecal                      = new lilMaterialProperty("_Main4thTexIsDecal", PropertyBlock.MainColor, PropertyBlock.MainColor4th);
+        private readonly lilMaterialProperty main4thTexIsLeftOnly                   = new lilMaterialProperty("_Main4thTexIsLeftOnly", PropertyBlock.MainColor, PropertyBlock.MainColor4th);
+        private readonly lilMaterialProperty main4thTexIsRightOnly                  = new lilMaterialProperty("_Main4thTexIsRightOnly", PropertyBlock.MainColor, PropertyBlock.MainColor4th);
+        private readonly lilMaterialProperty main4thTexShouldCopy                   = new lilMaterialProperty("_Main4thTexShouldCopy", PropertyBlock.MainColor, PropertyBlock.MainColor4th);
+        private readonly lilMaterialProperty main4thTexShouldFlipMirror             = new lilMaterialProperty("_Main4thTexShouldFlipMirror", PropertyBlock.MainColor, PropertyBlock.MainColor4th);
+        private readonly lilMaterialProperty main4thTexShouldFlipCopy               = new lilMaterialProperty("_Main4thTexShouldFlipCopy", PropertyBlock.MainColor, PropertyBlock.MainColor4th);
+        private readonly lilMaterialProperty main4thTexIsMSDF                       = new lilMaterialProperty("_Main4thTexIsMSDF", PropertyBlock.MainColor, PropertyBlock.MainColor4th);
+        private readonly lilMaterialProperty main4thBlendMask                       = new lilMaterialProperty("_Main4thBlendMask", true, PropertyBlock.MainColor, PropertyBlock.MainColor4th);
+        private readonly lilMaterialProperty main4thTexBlendMode                    = new lilMaterialProperty("_Main4thTexBlendMode", PropertyBlock.MainColor, PropertyBlock.MainColor4th);
+        private readonly lilMaterialProperty main4thTexAlphaMode                    = new lilMaterialProperty("_Main4thTexAlphaMode", PropertyBlock.MainColor, PropertyBlock.MainColor4th);
+        private readonly lilMaterialProperty main4thEnableLighting                  = new lilMaterialProperty("_Main4thEnableLighting", PropertyBlock.MainColor, PropertyBlock.MainColor4th);
+        private readonly lilMaterialProperty main4thDissolveMask                    = new lilMaterialProperty("_Main4thDissolveMask", true, PropertyBlock.MainColor, PropertyBlock.MainColor4th);
+        private readonly lilMaterialProperty main4thDissolveNoiseMask               = new lilMaterialProperty("_Main4thDissolveNoiseMask", true, PropertyBlock.MainColor, PropertyBlock.MainColor4th);
+        private readonly lilMaterialProperty main4thDissolveNoiseMask_ScrollRotate  = new lilMaterialProperty("_Main4thDissolveNoiseMask_ScrollRotate", PropertyBlock.MainColor, PropertyBlock.MainColor4th);
+        private readonly lilMaterialProperty main4thDissolveNoiseStrength           = new lilMaterialProperty("_Main4thDissolveNoiseStrength", PropertyBlock.MainColor, PropertyBlock.MainColor4th);
+        private readonly lilMaterialProperty main4thDissolveColor                   = new lilMaterialProperty("_Main4thDissolveColor", PropertyBlock.MainColor, PropertyBlock.MainColor4th);
+        private readonly lilMaterialProperty main4thDissolveParams                  = new lilMaterialProperty("_Main4thDissolveParams", PropertyBlock.MainColor, PropertyBlock.MainColor4th);
+        private readonly lilMaterialProperty main4thDissolvePos                     = new lilMaterialProperty("_Main4thDissolvePos", PropertyBlock.MainColor, PropertyBlock.MainColor4th);
+        private readonly lilMaterialProperty main4thDistanceFade                    = new lilMaterialProperty("_Main4thDistanceFade", PropertyBlock.MainColor, PropertyBlock.MainColor4th);
+
+        private readonly lilMaterialProperty useMain5thTex                          = new lilMaterialProperty("_UseMain5thTex", PropertyBlock.MainColor, PropertyBlock.MainColor5th);
+        private readonly lilMaterialProperty mainColor5th                           = new lilMaterialProperty("_Color5th", PropertyBlock.MainColor, PropertyBlock.MainColor5th);
+        private readonly lilMaterialProperty main5thTexAngle                        = new lilMaterialProperty("_Main5thTexAngle", PropertyBlock.MainColor, PropertyBlock.MainColor5th);
+        private readonly lilMaterialProperty main5thTex_ScrollRotate                = new lilMaterialProperty("_Main5thTex_ScrollRotate", PropertyBlock.MainColor, PropertyBlock.MainColor5th);
+        private readonly lilMaterialProperty main5thTex                             = new lilMaterialProperty("_Main5thTex", true, PropertyBlock.MainColor, PropertyBlock.MainColor5th);
+        private readonly lilMaterialProperty main5thTex_UVMode                      = new lilMaterialProperty("_Main5thTex_UVMode", PropertyBlock.MainColor, PropertyBlock.MainColor5th);
+        private readonly lilMaterialProperty main5thTex_Cull                        = new lilMaterialProperty("_Main5thTex_Cull", PropertyBlock.MainColor, PropertyBlock.MainColor5th);
+        private readonly lilMaterialProperty main5thTexDecalAnimation               = new lilMaterialProperty("_Main5thTexDecalAnimation", PropertyBlock.MainColor, PropertyBlock.MainColor5th);
+        private readonly lilMaterialProperty main5thTexDecalSubParam                = new lilMaterialProperty("_Main5thTexDecalSubParam", PropertyBlock.MainColor, PropertyBlock.MainColor5th);
+        private readonly lilMaterialProperty main5thTexIsDecal                      = new lilMaterialProperty("_Main5thTexIsDecal", PropertyBlock.MainColor, PropertyBlock.MainColor5th);
+        private readonly lilMaterialProperty main5thTexIsLeftOnly                   = new lilMaterialProperty("_Main5thTexIsLeftOnly", PropertyBlock.MainColor, PropertyBlock.MainColor5th);
+        private readonly lilMaterialProperty main5thTexIsRightOnly                  = new lilMaterialProperty("_Main5thTexIsRightOnly", PropertyBlock.MainColor, PropertyBlock.MainColor5th);
+        private readonly lilMaterialProperty main5thTexShouldCopy                   = new lilMaterialProperty("_Main5thTexShouldCopy", PropertyBlock.MainColor, PropertyBlock.MainColor5th);
+        private readonly lilMaterialProperty main5thTexShouldFlipMirror             = new lilMaterialProperty("_Main5thTexShouldFlipMirror", PropertyBlock.MainColor, PropertyBlock.MainColor5th);
+        private readonly lilMaterialProperty main5thTexShouldFlipCopy               = new lilMaterialProperty("_Main5thTexShouldFlipCopy", PropertyBlock.MainColor, PropertyBlock.MainColor5th);
+        private readonly lilMaterialProperty main5thTexIsMSDF                       = new lilMaterialProperty("_Main5thTexIsMSDF", PropertyBlock.MainColor, PropertyBlock.MainColor5th);
+        private readonly lilMaterialProperty main5thBlendMask                       = new lilMaterialProperty("_Main5thBlendMask", true, PropertyBlock.MainColor, PropertyBlock.MainColor5th);
+        private readonly lilMaterialProperty main5thTexBlendMode                    = new lilMaterialProperty("_Main5thTexBlendMode", PropertyBlock.MainColor, PropertyBlock.MainColor5th);
+        private readonly lilMaterialProperty main5thTexAlphaMode                    = new lilMaterialProperty("_Main5thTexAlphaMode", PropertyBlock.MainColor, PropertyBlock.MainColor5th);
+        private readonly lilMaterialProperty main5thEnableLighting                  = new lilMaterialProperty("_Main5thEnableLighting", PropertyBlock.MainColor, PropertyBlock.MainColor5th);
+        private readonly lilMaterialProperty main5thDissolveMask                    = new lilMaterialProperty("_Main5thDissolveMask", true, PropertyBlock.MainColor, PropertyBlock.MainColor5th);
+        private readonly lilMaterialProperty main5thDissolveNoiseMask               = new lilMaterialProperty("_Main5thDissolveNoiseMask", true, PropertyBlock.MainColor, PropertyBlock.MainColor5th);
+        private readonly lilMaterialProperty main5thDissolveNoiseMask_ScrollRotate  = new lilMaterialProperty("_Main5thDissolveNoiseMask_ScrollRotate", PropertyBlock.MainColor, PropertyBlock.MainColor5th);
+        private readonly lilMaterialProperty main5thDissolveNoiseStrength           = new lilMaterialProperty("_Main5thDissolveNoiseStrength", PropertyBlock.MainColor, PropertyBlock.MainColor5th);
+        private readonly lilMaterialProperty main5thDissolveColor                   = new lilMaterialProperty("_Main5thDissolveColor", PropertyBlock.MainColor, PropertyBlock.MainColor5th);
+        private readonly lilMaterialProperty main5thDissolveParams                  = new lilMaterialProperty("_Main5thDissolveParams", PropertyBlock.MainColor, PropertyBlock.MainColor5th);
+        private readonly lilMaterialProperty main5thDissolvePos                     = new lilMaterialProperty("_Main5thDissolvePos", PropertyBlock.MainColor, PropertyBlock.MainColor5th);
+        private readonly lilMaterialProperty main5thDistanceFade                    = new lilMaterialProperty("_Main5thDistanceFade", PropertyBlock.MainColor, PropertyBlock.MainColor5th);
 
         private readonly lilMaterialProperty alphaMaskMode  = new lilMaterialProperty("_AlphaMaskMode", PropertyBlock.MainColor, PropertyBlock.AlphaMask);
         private readonly lilMaterialProperty alphaMask      = new lilMaterialProperty("_AlphaMask", true, PropertyBlock.MainColor, PropertyBlock.AlphaMask);
@@ -677,6 +739,8 @@ namespace lilToon
         private readonly lilMaterialProperty audioLinkMask_UVMode 　　　　= new lilMaterialProperty("_AudioLinkMask_UVMode", true, PropertyBlock.AudioLink);
         private readonly lilMaterialProperty audioLink2Main2nd          = new lilMaterialProperty("_AudioLink2Main2nd", PropertyBlock.AudioLink);
         private readonly lilMaterialProperty audioLink2Main3rd          = new lilMaterialProperty("_AudioLink2Main3rd", PropertyBlock.AudioLink);
+        private readonly lilMaterialProperty audioLink2Main4th          = new lilMaterialProperty("_AudioLink2Main4th", PropertyBlock.AudioLink);
+        private readonly lilMaterialProperty audioLink2Main5th          = new lilMaterialProperty("_AudioLink2Main5th", PropertyBlock.AudioLink);
         private readonly lilMaterialProperty audioLink2Emission         = new lilMaterialProperty("_AudioLink2Emission", PropertyBlock.AudioLink);
         private readonly lilMaterialProperty audioLink2EmissionGrad     = new lilMaterialProperty("_AudioLink2EmissionGrad", PropertyBlock.AudioLink);
         private readonly lilMaterialProperty audioLink2Emission2nd      = new lilMaterialProperty("_AudioLink2Emission2nd", PropertyBlock.AudioLink);
@@ -997,6 +1061,64 @@ namespace lilToon
                 main3rdDissolvePos,
                 main3rdDistanceFade,
 
+                useMain4thTex,
+                mainColor4th,
+                main4thTex,
+                main4thTexAngle,
+                main4thTex_ScrollRotate,
+                main4thTex_UVMode,
+                main4thTex_Cull,
+                main4thTexDecalAnimation,
+                main4thTexDecalSubParam,
+                main4thTexIsDecal,
+                main4thTexIsLeftOnly,
+                main4thTexIsRightOnly,
+                main4thTexShouldCopy,
+                main4thTexShouldFlipMirror,
+                main4thTexShouldFlipCopy,
+                main4thTexIsMSDF,
+                main4thBlendMask,
+                main4thTexBlendMode,
+                main4thTexAlphaMode,
+                main4thEnableLighting,
+                main4thDissolveMask,
+                main4thDissolveNoiseMask,
+                main4thDissolveNoiseMask_ScrollRotate,
+                main4thDissolveNoiseStrength,
+                main4thDissolveColor,
+                main4thDissolveParams,
+                main4thDissolvePos,
+                main4thDistanceFade,
+
+                useMain5thTex,
+                mainColor5th,
+                main5thTex,
+                main5thTexAngle,
+                main5thTex_ScrollRotate,
+                main5thTex_UVMode,
+                main5thTex_Cull,
+                main5thTexDecalAnimation,
+                main5thTexDecalSubParam,
+                main5thTexIsDecal,
+                main5thTexIsLeftOnly,
+                main5thTexIsRightOnly,
+                main5thTexShouldCopy,
+                main5thTexShouldFlipMirror,
+                main5thTexShouldFlipCopy,
+                main5thTexIsMSDF,
+                main5thBlendMask,
+                main5thTexBlendMode,
+                main5thTexAlphaMode,
+                main5thEnableLighting,
+                main5thDissolveMask,
+                main5thDissolveNoiseMask,
+                main5thDissolveNoiseMask_ScrollRotate,
+                main5thDissolveNoiseStrength,
+                main5thDissolveColor,
+                main5thDissolveParams,
+                main5thDissolvePos,
+                main5thDistanceFade,
+
                 alphaMaskMode,
                 alphaMask,
                 alphaMaskScale,
@@ -1275,6 +1397,8 @@ namespace lilToon
                 audioLinkMask_UVMode,
                 audioLink2Main2nd,
                 audioLink2Main3rd,
+                audioLink2Main4th,
+                audioLink2Main5th,
                 audioLink2Emission,
                 audioLink2EmissionGrad,
                 audioLink2Emission2nd,
@@ -1675,6 +1799,28 @@ namespace lilToon
                             EditorGUILayout.LabelField(GetLoc("sMainColor3rd"), customToggleFont);
                             EditorGUILayout.BeginVertical(boxInnerHalf);
                             LocalizedPropertyTextureWithAlpha(colorRGBAContent, main3rdTex, mainColor3rd);
+                            EditorGUILayout.EndVertical();
+                            EditorGUILayout.EndVertical();
+                        }
+                        
+                        // Main 4th
+                        if(useMain4thTex.floatValue == 1)
+                        {
+                            EditorGUILayout.BeginVertical(boxOuter);
+                            EditorGUILayout.LabelField(GetLoc("sMainColor4th"), customToggleFont);
+                            EditorGUILayout.BeginVertical(boxInnerHalf);
+                            LocalizedPropertyTextureWithAlpha(colorRGBAContent, main4thTex, mainColor4th);
+                            EditorGUILayout.EndVertical();
+                            EditorGUILayout.EndVertical();
+                        }
+                        
+                        // Main 5th
+                        if(useMain5thTex.floatValue == 1)
+                        {
+                            EditorGUILayout.BeginVertical(boxOuter);
+                            EditorGUILayout.LabelField(GetLoc("sMainColor5th"), customToggleFont);
+                            EditorGUILayout.BeginVertical(boxInnerHalf);
+                            LocalizedPropertyTextureWithAlpha(colorRGBAContent, main5thTex, mainColor5th);
                             EditorGUILayout.EndVertical();
                             EditorGUILayout.EndVertical();
                         }
@@ -2533,6 +2679,98 @@ namespace lilToon
                                     {
                                         TextureGUI(ref edSet.isShowMain3rdDissolveNoiseMask, noiseMaskContent, main3rdDissolveNoiseMask, main3rdDissolveNoiseStrength, main3rdDissolveNoiseMask_ScrollRotate);
                                         LocalizedProperty(main3rdDissolveColor);
+                                    }
+                                    lilEditorGUI.DrawLine();
+                                    TextureBakeGUI(material, 6);
+                                    EditorGUILayout.EndVertical();
+                                }
+                                EditorGUILayout.EndVertical();
+                            }
+
+                            //------------------------------------------------------------------------------------------------------------------------------
+                            // 4th
+                            if(ShouldDrawBlock(PropertyBlock.MainColor4th))
+                            {
+                                EditorGUILayout.BeginVertical(boxOuter);
+                                LocalizedProperty(useMain4thTex, false);
+                                DrawMenuButton(GetLoc("sAnchorMainColor2"), PropertyBlock.MainColor4th);
+                                if(useMain4thTex.floatValue == 1)
+                                {
+                                    EditorGUILayout.BeginVertical(boxInnerHalf);
+                                    LocalizedPropertyTexture(colorRGBAContent, main4thTex, mainColor4th);
+                                    EditorGUI.indentLevel += 2;
+                                    LocalizedPropertyAlpha(mainColor4th);
+                                    LocalizedProperty(main4thTexIsMSDF);
+                                    LocalizedProperty(main4thTex_Cull);
+                                    EditorGUI.indentLevel -= 2;
+                                    LocalizedProperty(main4thEnableLighting);
+                                    LocalizedProperty(main4thTexBlendMode);
+                                    LocalizedProperty(main4thTexAlphaMode);
+                                    lilEditorGUI.DrawLine();
+                                    UV4Decal(main4thTexIsDecal, main4thTexIsLeftOnly, main4thTexIsRightOnly, main4thTexShouldCopy, main4thTexShouldFlipMirror, main4thTexShouldFlipCopy, main4thTex, main4thTex_ScrollRotate, main4thTexAngle, main4thTexDecalAnimation, main4thTexDecalSubParam, main4thTex_UVMode);
+                                    lilEditorGUI.DrawLine();
+                                    LocalizedPropertyTexture(maskBlendContent, main4thBlendMask);
+                                    EditorGUILayout.LabelField(GetLoc("sDistanceFade"));
+                                    EditorGUI.indentLevel++;
+                                    LocalizedProperty(main4thDistanceFade);
+                                    EditorGUI.indentLevel--;
+                                    lilEditorGUI.DrawLine();
+                                    LocalizedProperty(main4thDissolveParams);
+                                    if(main4thDissolveParams.vectorValue.x == 1.0f)                                                TextureGUI(ref edSet.isShowMain4thDissolveMask, maskBlendContent, main4thDissolveMask);
+                                    if(main4thDissolveParams.vectorValue.x == 2.0f && main4thDissolveParams.vectorValue.y == 0.0f) LocalizedProperty(main4thDissolvePos, "sPosition|2");
+                                    if(main4thDissolveParams.vectorValue.x == 2.0f && main4thDissolveParams.vectorValue.y == 1.0f) LocalizedProperty(main4thDissolvePos, "sVector|2");
+                                    if(main4thDissolveParams.vectorValue.x == 3.0f && main4thDissolveParams.vectorValue.y == 0.0f) LocalizedProperty(main4thDissolvePos, "sPosition|3");
+                                    if(main4thDissolveParams.vectorValue.x == 3.0f && main4thDissolveParams.vectorValue.y == 1.0f) LocalizedProperty(main4thDissolvePos, "sVector|3");
+                                    if(main4thDissolveParams.vectorValue.x != 0.0f)
+                                    {
+                                        TextureGUI(ref edSet.isShowMain4thDissolveNoiseMask, noiseMaskContent, main4thDissolveNoiseMask, main4thDissolveNoiseStrength, main4thDissolveNoiseMask_ScrollRotate);
+                                        LocalizedProperty(main4thDissolveColor);
+                                    }
+                                    lilEditorGUI.DrawLine();
+                                    TextureBakeGUI(material, 6);
+                                    EditorGUILayout.EndVertical();
+                                }
+                                EditorGUILayout.EndVertical();
+                            }
+
+                            //------------------------------------------------------------------------------------------------------------------------------
+                            // 5th
+                            if(ShouldDrawBlock(PropertyBlock.MainColor5th))
+                            {
+                                EditorGUILayout.BeginVertical(boxOuter);
+                                LocalizedProperty(useMain5thTex, false);
+                                DrawMenuButton(GetLoc("sAnchorMainColor2"), PropertyBlock.MainColor5th);
+                                if(useMain5thTex.floatValue == 1)
+                                {
+                                    EditorGUILayout.BeginVertical(boxInnerHalf);
+                                    LocalizedPropertyTexture(colorRGBAContent, main5thTex, mainColor5th);
+                                    EditorGUI.indentLevel += 2;
+                                    LocalizedPropertyAlpha(mainColor5th);
+                                    LocalizedProperty(main5thTexIsMSDF);
+                                    LocalizedProperty(main5thTex_Cull);
+                                    EditorGUI.indentLevel -= 2;
+                                    LocalizedProperty(main5thEnableLighting);
+                                    LocalizedProperty(main5thTexBlendMode);
+                                    LocalizedProperty(main5thTexAlphaMode);
+                                    lilEditorGUI.DrawLine();
+                                    UV4Decal(main5thTexIsDecal, main5thTexIsLeftOnly, main5thTexIsRightOnly, main5thTexShouldCopy, main5thTexShouldFlipMirror, main5thTexShouldFlipCopy, main5thTex, main5thTex_ScrollRotate, main5thTexAngle, main5thTexDecalAnimation, main5thTexDecalSubParam, main5thTex_UVMode);
+                                    lilEditorGUI.DrawLine();
+                                    LocalizedPropertyTexture(maskBlendContent, main5thBlendMask);
+                                    EditorGUILayout.LabelField(GetLoc("sDistanceFade"));
+                                    EditorGUI.indentLevel++;
+                                    LocalizedProperty(main5thDistanceFade);
+                                    EditorGUI.indentLevel--;
+                                    lilEditorGUI.DrawLine();
+                                    LocalizedProperty(main5thDissolveParams);
+                                    if(main5thDissolveParams.vectorValue.x == 1.0f)                                                TextureGUI(ref edSet.isShowMain5thDissolveMask, maskBlendContent, main5thDissolveMask);
+                                    if(main5thDissolveParams.vectorValue.x == 2.0f && main5thDissolveParams.vectorValue.y == 0.0f) LocalizedProperty(main5thDissolvePos, "sPosition|2");
+                                    if(main5thDissolveParams.vectorValue.x == 2.0f && main5thDissolveParams.vectorValue.y == 1.0f) LocalizedProperty(main5thDissolvePos, "sVector|2");
+                                    if(main5thDissolveParams.vectorValue.x == 3.0f && main5thDissolveParams.vectorValue.y == 0.0f) LocalizedProperty(main5thDissolvePos, "sPosition|3");
+                                    if(main5thDissolveParams.vectorValue.x == 3.0f && main5thDissolveParams.vectorValue.y == 1.0f) LocalizedProperty(main5thDissolvePos, "sVector|3");
+                                    if(main5thDissolveParams.vectorValue.x != 0.0f)
+                                    {
+                                        TextureGUI(ref edSet.isShowMain5thDissolveNoiseMask, noiseMaskContent, main5thDissolveNoiseMask, main5thDissolveNoiseStrength, main5thDissolveNoiseMask_ScrollRotate);
+                                        LocalizedProperty(main5thDissolveColor);
                                     }
                                     lilEditorGUI.DrawLine();
                                     TextureBakeGUI(material, 6);

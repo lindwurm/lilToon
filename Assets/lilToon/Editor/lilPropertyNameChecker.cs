@@ -105,6 +105,24 @@ namespace lilToon
             return res;
         }
 
+        public static bool IsMain4thProperty(string name)
+        {
+            bool res = false;
+            res = res || name == "_UseMain4thTex";
+            res = res || name == "_Color4th";
+            res = res || name.Contains("_Main4th");
+            return res;
+        }
+
+        public static bool IsMain5thProperty(string name)
+        {
+            bool res = false;
+            res = res || name == "_UseMain5thTex";
+            res = res || name == "_Color5th";
+            res = res || name.Contains("_Main5th");
+            return res;
+        }
+
         public static bool IsAlphaMaskProperty(string name)
         {
             bool res = false;

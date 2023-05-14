@@ -66,6 +66,50 @@ float4  _MainTex_ST;
     #endif
 #endif
 
+// Main4th
+#if defined(LIL_FEATURE_MAIN4TH)
+    float4  _Color4th;
+    float4  _Main4thTex_ST;
+    float4  _Main4thTex_ScrollRotate;
+    float4  _Main4thDistanceFade;
+    #if defined(LIL_FEATURE_DECAL) && defined(LIL_FEATURE_ANIMATE_DECAL)
+        float4  _Main4thTexDecalAnimation;
+        float4  _Main4thTexDecalSubParam;
+    #endif
+    #if defined(LIL_FEATURE_LAYER_DISSOLVE)
+        float4  _Main4thDissolveMask_ST;
+        float4  _Main4thDissolveColor;
+        float4  _Main4thDissolveParams;
+        float4  _Main4thDissolvePos;
+        #if defined(LIL_FEATURE_Main4thDissolveNoiseMask)
+            float4  _Main4thDissolveNoiseMask_ST;
+            float4  _Main4thDissolveNoiseMask_ScrollRotate;
+        #endif
+    #endif
+#endif
+
+// Main5th
+#if defined(LIL_FEATURE_MAIN5TH)
+    float4  _Color5th;
+    float4  _Main5thTex_ST;
+    float4  _Main5thTex_ScrollRotate;
+    float4  _Main5thDistanceFade;
+    #if defined(LIL_FEATURE_DECAL) && defined(LIL_FEATURE_ANIMATE_DECAL)
+        float4  _Main5thTexDecalAnimation;
+        float4  _Main5thTexDecalSubParam;
+    #endif
+    #if defined(LIL_FEATURE_LAYER_DISSOLVE)
+        float4  _Main5thDissolveMask_ST;
+        float4  _Main5thDissolveColor;
+        float4  _Main5thDissolveParams;
+        float4  _Main5thDissolvePos;
+        #if defined(LIL_FEATURE_Main5thDissolveNoiseMask)
+            float4  _Main5thDissolveNoiseMask_ST;
+            float4  _Main5thDissolveNoiseMask_ScrollRotate;
+        #endif
+    #endif
+#endif
+
 // Shadow
 #if defined(LIL_FEATURE_SHADOW)
     float4  _ShadowColor;
@@ -304,6 +348,20 @@ float   _AAStrength;
     float   _Main3rdEnableLighting;
     #if defined(LIL_FEATURE_Main3rdDissolveNoiseMask)
         float   _Main3rdDissolveNoiseStrength;
+    #endif
+#endif
+#if defined(LIL_FEATURE_MAIN4TH)
+    float   _Main4thTexAngle;
+    float   _Main4thEnableLighting;
+    #if defined(LIL_FEATURE_Main4thDissolveNoiseMask)
+        float   _Main4thDissolveNoiseStrength;
+    #endif
+#endif
+#if defined(LIL_FEATURE_MAIN5TH)
+    float   _Main5thTexAngle;
+    float   _Main5thEnableLighting;
+    #if defined(LIL_FEATURE_Main5thDissolveNoiseMask)
+        float   _Main5thDissolveNoiseStrength;
     #endif
 #endif
 #if defined(LIL_FEATURE_ALPHAMASK)
@@ -556,6 +614,18 @@ uint    _Cull;
     uint    _Main3rdTex_UVMode;
     uint    _Main3rdTex_Cull;
 #endif
+#if defined(LIL_FEATURE_MAIN4TH)
+    uint    _Main4thTexBlendMode;
+    uint    _Main4thTexAlphaMode;
+    uint    _Main4thTex_UVMode;
+    uint    _Main4thTex_Cull;
+#endif
+#if defined(LIL_FEATURE_MAIN5TH)
+    uint    _Main5thTexBlendMode;
+    uint    _Main5thTexAlphaMode;
+    uint    _Main5thTex_UVMode;
+    uint    _Main5thTex_Cull;
+#endif
 #if defined(LIL_FEATURE_ALPHAMASK)
     uint    _AlphaMaskMode;
 #endif
@@ -636,6 +706,30 @@ lilBool _Invisible;
         lilBool _Main3rdTexShouldCopy;
         lilBool _Main3rdTexShouldFlipMirror;
         lilBool _Main3rdTexShouldFlipCopy;
+    #endif
+#endif
+#if defined(LIL_FEATURE_MAIN4TH)
+    lilBool _UseMain4thTex;
+    lilBool _Main4thTexIsMSDF;
+    #if defined(LIL_FEATURE_DECAL)
+        lilBool _Main4thTexIsDecal;
+        lilBool _Main4thTexIsLeftOnly;
+        lilBool _Main4thTexIsRightOnly;
+        lilBool _Main4thTexShouldCopy;
+        lilBool _Main4thTexShouldFlipMirror;
+        lilBool _Main4thTexShouldFlipCopy;
+    #endif
+#endif
+#if defined(LIL_FEATURE_MAIN5TH)
+    lilBool _UseMain5thTex;
+    lilBool _Main5thTexIsMSDF;
+    #if defined(LIL_FEATURE_DECAL)
+        lilBool _Main5thTexIsDecal;
+        lilBool _Main5thTexIsLeftOnly;
+        lilBool _Main5thTexIsRightOnly;
+        lilBool _Main5thTexShouldCopy;
+        lilBool _Main5thTexShouldFlipMirror;
+        lilBool _Main5thTexShouldFlipCopy;
     #endif
 #endif
 #if defined(LIL_FEATURE_SHADOW)
@@ -725,6 +819,12 @@ lilBool _Invisible;
     #endif
     #if defined(LIL_FEATURE_MAIN3RD)
         lilBool _AudioLink2Main3rd;
+    #endif
+    #if defined(LIL_FEATURE_MAIN4TH)
+        lilBool _AudioLink2Main4th;
+    #endif
+    #if defined(LIL_FEATURE_MAIN5TH)
+        lilBool _AudioLink2Main5th;
     #endif
     #if defined(LIL_FEATURE_EMISSION_1ST)
         lilBool _AudioLink2Emission;

@@ -372,10 +372,14 @@ namespace lilToon
             bool useDissolve = IsFeatureOnVectorX(material, "_DissolveParams");
             bool useMain2ndDissolve = IsFeatureOnVectorX(material, "_Main2ndDissolveParams");
             bool useMain3rdDissolve = IsFeatureOnVectorX(material, "_Main3rdDissolveParams");
+            bool useMain4thDissolve = IsFeatureOnVectorX(material, "_Main4thDissolveParams");
+            bool useMain5thDissolve = IsFeatureOnVectorX(material, "_Main5thDissolveParams");
             bool useMainTexHSVG = IsFeatureOnHSVG(material, "_MainTexHSVG");
             bool useMainGradation = IsFeatureOnFloat(material, "_MainGradationStrength");
             bool useMain2ndTex = IsFeatureOnFloat(material, "_UseMain2ndTex");
             bool useMain3rdTex = IsFeatureOnFloat(material, "_UseMain3rdTex");
+            bool useMain4thTex = IsFeatureOnFloat(material, "_UseMain4thTex");
+            bool useMain5thTex = IsFeatureOnFloat(material, "_UseMain5thTex");
             bool useBacklight = IsFeatureOnFloat(material, "_UseBacklight");
             bool useParallax = IsFeatureOnFloat(material, "_UseParallax");
             bool usePOM = IsFeatureOnFloat(material, "_UsePOM");
@@ -383,6 +387,8 @@ namespace lilToon
             bool useAlphaMask = IsFeatureOnFloat(material, "_AlphaMaskMode");
             bool useMain2ndTexDecalAnimation = IsFeatureOnDecalAnimation(material, "_Main2ndTexDecalAnimation");
             bool useMain3rdTexDecalAnimation = IsFeatureOnDecalAnimation(material, "_Main3rdTexDecalAnimation");
+            bool useMain4thTexDecalAnimation = IsFeatureOnDecalAnimation(material, "_Main4thTexDecalAnimation");
+            bool useMain5thTexDecalAnimation = IsFeatureOnDecalAnimation(material, "_Main5thTexDecalAnimation");
             bool useEmissionBlendMask = IsFeatureOnTexture(material, "_EmissionBlendMask");
             bool useEmission2ndBlendMask = IsFeatureOnTexture(material, "_Emission2ndBlendMask");
 
@@ -551,6 +557,20 @@ namespace lilToon
                     material.SetTexture("_Main3rdBlendMask", null);
                     material.SetTexture("_Main3rdDissolveMask", null);
                     material.SetTexture("_Main3rdDissolveNoiseMask", null);
+                }
+                if(material.GetFloat("_UseMain4thTex") == 0.0f)
+                {
+                    material.SetTexture("_Main4thTex", null);
+                    material.SetTexture("_Main4thBlendMask", null);
+                    material.SetTexture("_Main4thDissolveMask", null);
+                    material.SetTexture("_Main4thDissolveNoiseMask", null);
+                }
+                if(material.GetFloat("_UseMain5thTex") == 0.0f)
+                {
+                    material.SetTexture("_Main5thTex", null);
+                    material.SetTexture("_Main5thBlendMask", null);
+                    material.SetTexture("_Main5thDissolveMask", null);
+                    material.SetTexture("_Main5thDissolveNoiseMask", null);
                 }
                 if(material.GetFloat("_UseShadow") == 0.0f)
                 {
