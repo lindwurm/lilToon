@@ -276,6 +276,7 @@ float4 frag(v2f input LIL_VFACE(facing)) : SV_Target
             float main5thDissolveAlpha = 0.0;
             float4 color5th = 1.0;
             OVERRIDE_MAIN5TH
+        #endif
 
         //------------------------------------------------------------------------------------------------------------------------------
         // Alpha Mask

@@ -184,6 +184,8 @@ sMainColorAlpha	Main Color / Alpha	メインカラー / 透過	메인 컬러 / �
 sMainColor	Main Color	メインカラー	메인 컬러	主色	主色
 sMainColor2nd	Main Color 2nd	メインカラー2nd	메인 컬러 2nd	第二主色	主色2nd
 sMainColor3rd	Main Color 3rd	メインカラー3rd	메인 컬러 3rd	第三主色	主色3rd
+sMainColor4th	Main Color 4th	メインカラー4th	메인 컬러 4th	第三主色	主色4th
+sMainColor5th	Main Color 5th	メインカラー5th	메인 컬러 5th	第三主色	主色5th
 sColorAdjust	Color Adjust	色調補正	색조 보정	色调校正	色調校正
 sGradationMap	Gradation Map	グラデーションマップ	그라디언트 맵	渐变映射	漸變映射
 sNotAlphaIsTransparency	This texture is not marked as AlphaIsTransparency	このテクスチャはAlphaIsTransparencyとして設定されていません	이 텍스처는 Alpha Is Transparency로 설정되어 있지 않습니다	此纹理未被设置为 Alpha 是透明的	此紋理未被設置為AlphaIsTransparency
@@ -409,6 +411,8 @@ sDialogSetMainTex	You need to set texture to Main Color.	メインカラーに�
 sDialogNoChange	You are not changing the color.	色を変更していません。	색상을 변경하지 않습니다.	你没有更改颜色。	你不改變顏色。
 sDialogNotUse2nd	You are not using the 2nd layer.	メインカラー2ndを利用していません。	메인 컬러 2nd를 이용하지 않습니다.	你没有使用第二层。	你沒有使用第二層。
 sDialogNotUse3rd	You are not using the 3rd layer.	メインカラー3rdを利用していません。	메인 컬러 3rd를 이용하지 않습니다.	你没有使用第三层。	你沒有使用第三層。
+sDialogNotUse4th	You are not using the 4th layer.	メインカラー4thを利用していません。	메인 컬러 4th를 이용하지 않습니다.	你没有使用第四层。	你沒有使用第四層。
+sDialogNotUse5th	You are not using the 5th layer.	メインカラー5thを利用していません。	메인 컬러 5th를 이용하지 않습니다.	你没有使用第五层。	你沒有使用第五層。
 sDialogNotUseAll	You are not changing the color and not using layers.	色の変更とメインカラー2nd・3rdを使用していません。	색상 변경과 기본 색상 2nd · 3rd를 사용하지 않습니다.	你没有更改颜色，没有使用图层。	你沒有改變顏色，沒有使用圖層。
 sDialogRunBake	Run bake?	焼き込みを実行しますか?	굽기를 실행 하시겠습니까?	进行烘培？	運行烘烤？
 sDialogBakeMain	Do you want to bake main texture?	メインカラーをベイクしますか?	메인 컬러를 구워 하시겠습니까?	你要烘培主纹理吗？	你要烘烤主紋理嗎？
