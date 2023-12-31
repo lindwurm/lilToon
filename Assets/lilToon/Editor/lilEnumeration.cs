@@ -57,6 +57,7 @@ namespace lilToon
         MainColor5th,
         AlphaMask,
         Shadow,
+        RimShade,
         Emission,
         Emission1st,
         Emission2nd,
