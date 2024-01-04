@@ -488,6 +488,8 @@
         [lilEnum]       _AudioLinkMask_UVMode       ("UV Mode|UV0|UV1|UV2|UV3", Int) = 0
         [lilToggle]     _AudioLink2Main2nd          ("sMainColor2nd", Int) = 0
         [lilToggle]     _AudioLink2Main3rd          ("sMainColor3rd", Int) = 0
+        [lilToggle]     _AudioLink2Main4th          ("sMainColor3rd", Int) = 0
+        [lilToggle]     _AudioLink2Main5th          ("sMainColor3rd", Int) = 0
         [lilToggle]     _AudioLink2Emission         ("sEmission", Int) = 0
         [lilToggle]     _AudioLink2EmissionGrad     ("sEmission+sGradation", Int) = 0
         [lilToggle]     _AudioLink2Emission2nd      ("sEmission2nd", Int) = 0

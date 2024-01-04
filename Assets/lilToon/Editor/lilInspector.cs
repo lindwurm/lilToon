@@ -1718,7 +1718,7 @@ namespace lilToon
             // Info
             EditorGUI.BeginChangeCheck();
             DrawWebPages();
-            DrawHelpPages();
+            //DrawHelpPages();
 
             //------------------------------------------------------------------------------------------------------------------------------
             // Language
@@ -3283,6 +3283,8 @@ namespace lilToon
                             EditorGUI.indentLevel++;
                             LocalizedProperty(audioLink2Main2nd);
                             LocalizedProperty(audioLink2Main3rd);
+                            LocalizedProperty(audioLink2Main4th);
+                            LocalizedProperty(audioLink2Main5th);
                             LocalizedProperty(audioLink2Emission);
                             LocalizedProperty(audioLink2EmissionGrad);
                             LocalizedProperty(audioLink2Emission2nd);
@@ -3853,10 +3855,10 @@ namespace lilToon
         {
             VersionCheck();
             var labelStyle = new GUIStyle(GUI.skin.label){fontStyle = FontStyle.Bold};
-            string versionLabel = "lilToon " + lilConstants.currentVersionName;
+            string versionLabel = "lilToon Mod_addMainColor5th " + lilConstants.currentVersionName;
             if(latestVersion != null && latestVersion.latest_vertion_name != null && latestVersion.latest_vertion_value > lilConstants.currentVersionValue)
             {
-                versionLabel = "[Update] lilToon " + lilConstants.currentVersionName + " -> " + latestVersion.latest_vertion_name;
+                versionLabel = "[Update] lilToon Mod_addMainColor5th" + lilConstants.currentVersionName + " -> " + latestVersion.latest_vertion_name;
                 labelStyle.normal.textColor = Color.red;
             }
 
@@ -3864,7 +3866,7 @@ namespace lilToon
             if(edSet.isShowWebPages)
             {
                 EditorGUI.indentLevel++;
-                lilEditorGUI.DrawWebButton("BOOTH", lilConstants.boothURL);
+                lilEditorGUI.DrawWebButton("Wiki", lilConstants.boothURL);
                 lilEditorGUI.DrawWebButton("GitHub", lilConstants.githubURL);
                 EditorGUI.indentLevel--;
             }

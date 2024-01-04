@@ -11,6 +11,8 @@
             #define LIL_MULTI_INPUTS_MAIN_TONECORRECTION
             #define LIL_MULTI_INPUTS_MAIN2ND
             #define LIL_MULTI_INPUTS_MAIN3RD
+            #define LIL_MULTI_INPUTS_MAIN4TH
+            #define LIL_MULTI_INPUTS_MAIN5TH
             #define LIL_MULTI_INPUTS_ALPHAMASK
             #define LIL_MULTI_INPUTS_SHADOW
             #define LIL_MULTI_INPUTS_RIMSHADE

@@ -6,12 +6,12 @@ namespace lilToon
 {
     public class lilConstants
     {
-        public const string currentVersionName = "1.6.0";
-        public const int currentVersionValue = 39;
+        public const string currentVersionName = "1.6.0p1";
+        public const int currentVersionValue = 100;
 
-        internal const string boothURL = "https://lilxyzw.booth.pm/";
-        internal const string githubURL = "https://github.com/lilxyzw/lilToon";
-        internal const string versionInfoURL = "https://raw.githubusercontent.com/lilxyzw/lilToon/master/version.json";
+        internal const string boothURL = "https://wiki.maud.io/ja/vrchat/liltoon";
+        internal const string githubURL = "https://github.com/lindwurm/lilToon";
+        internal const string versionInfoURL = "https://raw.githubusercontent.com/lindwurm/lilToon/main5th/version.json";
 
         internal static readonly string[] mainTexCheckWords = new[] {"mask", "shadow", "shade", "outline", "normal", "bumpmap", "matcap", "rimlight", "emittion", "reflection", "specular", "roughness", "smoothness", "metallic", "metalness", "opacity", "parallax", "displacement", "height", "ambient", "occlusion"};
 

@@ -708,6 +708,8 @@ Shader "Hidden/ltspass_cutout"
             #define LIL_FEATURE_MAIN_GRADATION_MAP
             #define LIL_FEATURE_MAIN2ND
             #define LIL_FEATURE_MAIN3RD
+            #define LIL_FEATURE_MAIN4TH
+            #define LIL_FEATURE_MAIN5TH
             #define LIL_FEATURE_DECAL
             #define LIL_FEATURE_ANIMATE_DECAL
             #define LIL_FEATURE_LAYER_DISSOLVE
