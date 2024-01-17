@@ -165,6 +165,7 @@ namespace lilToon
             public bool isShowDissolveMask              = false;
             public bool isShowDissolveNoiseMask         = false;
             public bool isShowIDMask                    = false;
+            public bool isShowUDIMDiscard               = false;
             public bool isShowEncryption                = false;
             public bool isShowStencil                   = false;
             public bool isShowOutline                   = false;
@@ -798,6 +799,26 @@ namespace lilToon
         private readonly lilMaterialProperty idMaskPrior6   = new lilMaterialProperty("_IDMaskPrior6", PropertyBlock.IDMask);
         private readonly lilMaterialProperty idMaskPrior7   = new lilMaterialProperty("_IDMaskPrior7", PropertyBlock.IDMask);
         private readonly lilMaterialProperty idMaskPrior8   = new lilMaterialProperty("_IDMaskPrior8", PropertyBlock.IDMask);
+        
+        private readonly lilMaterialProperty udimDiscardCompile    = new lilMaterialProperty("_UDIMDiscardCompile", PropertyBlock.UDIMDiscard);
+        private readonly lilMaterialProperty udimDiscardUV         = new lilMaterialProperty("_UDIMDiscardUV", PropertyBlock.UDIMDiscard);
+        private readonly lilMaterialProperty udimDiscardMethod     = new lilMaterialProperty("_UDIMDiscardMode", PropertyBlock.UDIMDiscard);
+        private readonly lilMaterialProperty udimDiscardRow3_0     = new lilMaterialProperty("_UDIMDiscardRow3_0", PropertyBlock.UDIMDiscard);
+        private readonly lilMaterialProperty udimDiscardRow3_1     = new lilMaterialProperty("_UDIMDiscardRow3_1", PropertyBlock.UDIMDiscard);
+        private readonly lilMaterialProperty udimDiscardRow3_2     = new lilMaterialProperty("_UDIMDiscardRow3_2", PropertyBlock.UDIMDiscard);
+        private readonly lilMaterialProperty udimDiscardRow3_3     = new lilMaterialProperty("_UDIMDiscardRow3_3", PropertyBlock.UDIMDiscard);
+        private readonly lilMaterialProperty udimDiscardRow2_0     = new lilMaterialProperty("_UDIMDiscardRow2_0", PropertyBlock.UDIMDiscard);
+        private readonly lilMaterialProperty udimDiscardRow2_1     = new lilMaterialProperty("_UDIMDiscardRow2_1", PropertyBlock.UDIMDiscard);
+        private readonly lilMaterialProperty udimDiscardRow2_2     = new lilMaterialProperty("_UDIMDiscardRow2_2", PropertyBlock.UDIMDiscard);
+        private readonly lilMaterialProperty udimDiscardRow2_3     = new lilMaterialProperty("_UDIMDiscardRow2_3", PropertyBlock.UDIMDiscard);
+        private readonly lilMaterialProperty udimDiscardRow1_0     = new lilMaterialProperty("_UDIMDiscardRow1_0", PropertyBlock.UDIMDiscard);
+        private readonly lilMaterialProperty udimDiscardRow1_1     = new lilMaterialProperty("_UDIMDiscardRow1_1", PropertyBlock.UDIMDiscard);
+        private readonly lilMaterialProperty udimDiscardRow1_2     = new lilMaterialProperty("_UDIMDiscardRow1_2", PropertyBlock.UDIMDiscard);
+        private readonly lilMaterialProperty udimDiscardRow1_3     = new lilMaterialProperty("_UDIMDiscardRow1_3", PropertyBlock.UDIMDiscard);
+        private readonly lilMaterialProperty udimDiscardRow0_0     = new lilMaterialProperty("_UDIMDiscardRow0_0", PropertyBlock.UDIMDiscard);
+        private readonly lilMaterialProperty udimDiscardRow0_1     = new lilMaterialProperty("_UDIMDiscardRow0_1", PropertyBlock.UDIMDiscard);
+        private readonly lilMaterialProperty udimDiscardRow0_2     = new lilMaterialProperty("_UDIMDiscardRow0_2", PropertyBlock.UDIMDiscard);
+        private readonly lilMaterialProperty udimDiscardRow0_3     = new lilMaterialProperty("_UDIMDiscardRow0_3", PropertyBlock.UDIMDiscard);
 
         private readonly lilMaterialProperty ignoreEncryption   = new lilMaterialProperty("_IgnoreEncryption", PropertyBlock.Encryption);
         private readonly lilMaterialProperty keys               = new lilMaterialProperty("_Keys", PropertyBlock.Encryption);
@@ -1475,6 +1496,26 @@ namespace lilToon
                 idMaskPrior6,
                 idMaskPrior7,
                 idMaskPrior8,
+                
+                udimDiscardCompile,
+                udimDiscardUV,
+                udimDiscardMethod,
+                udimDiscardRow3_0,
+                udimDiscardRow3_1,
+                udimDiscardRow3_2,
+                udimDiscardRow3_3,
+                udimDiscardRow2_0,
+                udimDiscardRow2_1,
+                udimDiscardRow2_2,
+                udimDiscardRow2_3,
+                udimDiscardRow1_0,
+                udimDiscardRow1_1,
+                udimDiscardRow1_2,
+                udimDiscardRow1_3,
+                udimDiscardRow0_0,
+                udimDiscardRow0_1,
+                udimDiscardRow0_2,
+                udimDiscardRow0_3,
 
                 ignoreEncryption,
                 keys,
@@ -3356,7 +3397,7 @@ namespace lilToon
                 // IDMask
                 if(ShouldDrawBlock(PropertyBlock.IDMask))
                 {
-                    edSet.isShowIDMask = lilEditorGUI.Foldout("ID Mask", edSet.isShowIDMask);
+                    edSet.isShowIDMask = lilEditorGUI.Foldout(GetLoc("sIDMask"), edSet.isShowIDMask);
                     DrawMenuButton(GetLoc("sAnchorIDMask"), PropertyBlock.IDMask);
                     if(edSet.isShowIDMask)
                     {
@@ -3400,6 +3441,54 @@ namespace lilToon
                         }
                         
                         EditorGUILayout.EndVertical();
+                        EditorGUILayout.EndVertical();
+                    }
+                }
+                
+                //------------------------------------------------------------------------------------------------------------------------------
+                // UDIM Discard
+                if (ShouldDrawBlock(PropertyBlock.UDIMDiscard))
+                {
+                    edSet.isShowUDIMDiscard = lilEditorGUI.Foldout(GetLoc("sUDIMDiscard"), edSet.isShowUDIMDiscard);
+                    DrawMenuButton(GetLoc("sAnchorUDIMDiscard"), PropertyBlock.UDIMDiscard);
+                    if(edSet.isShowUDIMDiscard)
+                    {
+                        EditorGUILayout.BeginVertical(boxOuter);
+                        LocalizedProperty(udimDiscardCompile); 
+                        DrawMenuButton(GetLoc("sUDIMDiscard"), PropertyBlock.UDIMDiscard);
+                        if (udimDiscardCompile.floatValue == 1)
+                        {
+                            EditorGUILayout.BeginVertical(boxInnerHalf);
+                            EditorGUILayout.HelpBox("Your model needs to be set up for this feature! Place groups of vertexes on different whole number UV tiles.", MessageType.Info);
+                            LocalizedProperty(udimDiscardUV);
+                            LocalizedProperty(udimDiscardMethod);
+
+                            m_MaterialEditor.ShaderProperty(udimDiscardRow3_0, GUIContent.none, 0);
+                            m_MaterialEditor.ShaderProperty(udimDiscardRow2_0, GUIContent.none, 0);
+                            m_MaterialEditor.ShaderProperty(udimDiscardRow1_0, GUIContent.none, 0);
+                            m_MaterialEditor.ShaderProperty(udimDiscardRow0_0, GUIContent.none, 0);
+                            EditorGUILayout.Space(-82);
+
+                            m_MaterialEditor.ShaderProperty(udimDiscardRow3_1, GUIContent.none, 2);
+                            m_MaterialEditor.ShaderProperty(udimDiscardRow2_1, GUIContent.none, 2);
+                            m_MaterialEditor.ShaderProperty(udimDiscardRow1_1, GUIContent.none, 2);
+                            m_MaterialEditor.ShaderProperty(udimDiscardRow0_1, GUIContent.none, 2);
+                            EditorGUILayout.Space(-82);
+
+                            m_MaterialEditor.ShaderProperty(udimDiscardRow3_2, GUIContent.none, 4);
+                            m_MaterialEditor.ShaderProperty(udimDiscardRow2_2, GUIContent.none, 4);
+                            m_MaterialEditor.ShaderProperty(udimDiscardRow1_2, GUIContent.none, 4);
+                            m_MaterialEditor.ShaderProperty(udimDiscardRow0_2, GUIContent.none, 4);
+                            EditorGUILayout.Space(-82);
+
+                            m_MaterialEditor.ShaderProperty(udimDiscardRow3_3, GUIContent.none, 6);
+                            m_MaterialEditor.ShaderProperty(udimDiscardRow2_3, GUIContent.none, 6);
+                            m_MaterialEditor.ShaderProperty(udimDiscardRow1_3, GUIContent.none, 6);
+                            m_MaterialEditor.ShaderProperty(udimDiscardRow0_3, GUIContent.none, 6);
+
+                            EditorGUILayout.EndVertical();
+                        }
+
                         EditorGUILayout.EndVertical();
                     }
                 }

@@ -80,6 +80,7 @@ namespace lilToon
         AudioLink,
         Dissolve,
         IDMask,
+        UDIMDiscard,
         Refraction,
         Fur,
         Encryption,

@@ -6,8 +6,8 @@ namespace lilToon
 {
     public class lilConstants
     {
-        public const string currentVersionName = "1.6.0p1";
-        public const int currentVersionValue = 100;
+        public const string currentVersionName = "1.7.1p1";
+        public const int currentVersionValue = 101;
 
         internal const string boothURL = "https://wiki.maud.io/ja/vrchat/liltoon";
         internal const string githubURL = "https://github.com/lindwurm/lilToon";
