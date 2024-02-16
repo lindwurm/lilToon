@@ -64,65 +64,35 @@ Shader "Hidden/ltsother_baker"
 
         //----------------------------------------------------------------------------------------------------------------------
         // Main4th
-        [lilToggleLeft] _UseMain4thTex              ("sMainColor4th", Int) = 0
-        [lilHDR]        _Color4th                   ("sColor", Color) = (1,1,1,1)
+        [lilToggleLeft] _UseMain4thTex              ("Use Main 4th", Int) = 0
+                        _Color4th                   ("Color", Color) = (1,1,1,1)
                         _Main4thTex                 ("Texture", 2D) = "white" {}
-        [lilAngle]      _Main4thTexAngle            ("sAngle", Float) = 0
-        [lilUVAnim]     _Main4thTex_ScrollRotate    ("sScrollRotates", Vector) = (0,0,0,0)
-        [lilEnum]       _Main4thTex_UVMode          ("UV Mode|UV0|UV1|UV2|UV3|MatCap", Int) = 0
-        [lilEnum]       _Main4thTex_Cull            ("sCullModes", Int) = 0
-        [lilDecalAnim]  _Main4thTexDecalAnimation   ("sDecalAnimations", Vector) = (1,1,1,30)
-        [lilDecalSub]   _Main4thTexDecalSubParam    ("sDecalSubParams", Vector) = (1,1,0,1)
-        [lilToggle]     _Main4thTexIsDecal          ("sAsDecal", Int) = 0
+        [lilAngle]      _Main4thTexAngle            ("Angle", Float) = 0
+        [lilToggle]     _Main4thTexIsDecal          ("As Decal", Int) = 0
         [lilToggle]     _Main4thTexIsLeftOnly       ("Left Only", Int) = 0
         [lilToggle]     _Main4thTexIsRightOnly      ("Right Only", Int) = 0
         [lilToggle]     _Main4thTexShouldCopy       ("Copy", Int) = 0
         [lilToggle]     _Main4thTexShouldFlipMirror ("Flip Mirror", Int) = 0
         [lilToggle]     _Main4thTexShouldFlipCopy   ("Flip Copy", Int) = 0
-        [lilToggle]     _Main4thTexIsMSDF           ("sAsMSDF", Int) = 0
+        [lilToggle]     _Main4thTexIsMSDF           ("As MSDF", Int) = 0
         [NoScaleOffset] _Main4thBlendMask           ("Mask", 2D) = "white" {}
-        [lilEnum]       _Main4thTexBlendMode        ("sBlendModes", Int) = 0
-        [lilEnum]       _Main4thTexAlphaMode        ("sAlphaModes", Int) = 0
-                        _Main4thEnableLighting      ("sEnableLighting", Range(0, 1)) = 1
-                        _Main4thDissolveMask        ("Dissolve Mask", 2D) = "white" {}
-                        _Main4thDissolveNoiseMask   ("Dissolve Noise Mask", 2D) = "gray" {}
-        [lilUVAnim]     _Main4thDissolveNoiseMask_ScrollRotate ("Scroll", Vector) = (0,0,0,0)
-                        _Main4thDissolveNoiseStrength ("Dissolve Noise Strength", float) = 0.1
-        [lilHDR]        _Main4thDissolveColor       ("sColor", Color) = (1,1,1,1)
-        [lilDissolve]   _Main4thDissolveParams      ("sDissolveParams", Vector) = (0,0,0.5,0.1)
-        [lilDissolveP]  _Main4thDissolvePos         ("Dissolve Position", Vector) = (0,0,0,0)
-        [lilFFFB]       _Main4thDistanceFade        ("sDistanceFadeSettings", Vector) = (0.1,0.01,0,0)
+        [lilEnum]       _Main4thTexBlendMode        ("Blend Mode|Normal|Add|Screen|Multiply", Int) = 0
 
         //----------------------------------------------------------------------------------------------------------------------
         // Main5th
-        [lilToggleLeft] _UseMain5thTex              ("sMainColor5th", Int) = 0
-        [lilHDR]        _Color5th                   ("sColor", Color) = (1,1,1,1)
+        [lilToggleLeft] _UseMain5thTex              ("Use Main 5th", Int) = 0
+                        _Color5th                   ("Color", Color) = (1,1,1,1)
                         _Main5thTex                 ("Texture", 2D) = "white" {}
-        [lilAngle]      _Main5thTexAngle            ("sAngle", Float) = 0
-        [lilUVAnim]     _Main5thTex_ScrollRotate    ("sScrollRotates", Vector) = (0,0,0,0)
-        [lilEnum]       _Main5thTex_UVMode          ("UV Mode|UV0|UV1|UV2|UV3|MatCap", Int) = 0
-        [lilEnum]       _Main5thTex_Cull            ("sCullModes", Int) = 0
-        [lilDecalAnim]  _Main5thTexDecalAnimation   ("sDecalAnimations", Vector) = (1,1,1,30)
-        [lilDecalSub]   _Main5thTexDecalSubParam    ("sDecalSubParams", Vector) = (1,1,0,1)
-        [lilToggle]     _Main5thTexIsDecal          ("sAsDecal", Int) = 0
+        [lilAngle]      _Main5thTexAngle            ("Angle", Float) = 0
+        [lilToggle]     _Main5thTexIsDecal          ("As Decal", Int) = 0
         [lilToggle]     _Main5thTexIsLeftOnly       ("Left Only", Int) = 0
         [lilToggle]     _Main5thTexIsRightOnly      ("Right Only", Int) = 0
         [lilToggle]     _Main5thTexShouldCopy       ("Copy", Int) = 0
         [lilToggle]     _Main5thTexShouldFlipMirror ("Flip Mirror", Int) = 0
         [lilToggle]     _Main5thTexShouldFlipCopy   ("Flip Copy", Int) = 0
-        [lilToggle]     _Main5thTexIsMSDF           ("sAsMSDF", Int) = 0
+        [lilToggle]     _Main5thTexIsMSDF           ("As MSDF", Int) = 0
         [NoScaleOffset] _Main5thBlendMask           ("Mask", 2D) = "white" {}
-        [lilEnum]       _Main5thTexBlendMode        ("sBlendModes", Int) = 0
-        [lilEnum]       _Main5thTexAlphaMode        ("sAlphaModes", Int) = 0
-                        _Main5thEnableLighting      ("sEnableLighting", Range(0, 1)) = 1
-                        _Main5thDissolveMask        ("Dissolve Mask", 2D) = "white" {}
-                        _Main5thDissolveNoiseMask   ("Dissolve Noise Mask", 2D) = "gray" {}
-        [lilUVAnim]     _Main5thDissolveNoiseMask_ScrollRotate ("Scroll", Vector) = (0,0,0,0)
-                        _Main5thDissolveNoiseStrength ("Dissolve Noise Strength", float) = 0.1
-        [lilHDR]        _Main5thDissolveColor       ("sColor", Color) = (1,1,1,1)
-        [lilDissolve]   _Main5thDissolveParams      ("sDissolveParams", Vector) = (0,0,0.5,0.1)
-        [lilDissolveP]  _Main5thDissolvePos         ("Dissolve Position", Vector) = (0,0,0,0)
-        [lilFFFB]       _Main5thDistanceFade        ("sDistanceFadeSettings", Vector) = (0.1,0.01,0,0)
+        [lilEnum]       _Main5thTexBlendMode        ("Blend Mode|Normal|Add|Screen|Multiply", Int) = 0
 
         //----------------------------------------------------------------------------------------------------------------------
         // Texture3D
@@ -189,6 +159,14 @@ Shader "Hidden/ltsother_baker"
             #define LIL_FEATURE_Main3rdBlendMask
             #define LIL_FEATURE_Main3rdDissolveMask
             #define LIL_FEATURE_Main3rdDissolveNoiseMask
+            #define LIL_FEATURE_Main4thTex
+            #define LIL_FEATURE_Main4thBlendMask
+            #define LIL_FEATURE_Main4thDissolveMask
+            #define LIL_FEATURE_Main4thDissolveNoiseMask
+            #define LIL_FEATURE_Main5thTex
+            #define LIL_FEATURE_Main5thBlendMask
+            #define LIL_FEATURE_Main5thDissolveMask
+            #define LIL_FEATURE_Main5thDissolveNoiseMask
             #define LIL_FEATURE_AlphaMask
             #define LIL_FEATURE_BumpMap
             #define LIL_FEATURE_Bump2ndMap
@@ -376,6 +354,22 @@ Shader "Hidden/ltsother_baker"
                     {
                         _Color3rd *= LIL_GET_SUBTEX(_Main3rdTex,input.uv0);
                         col.rgb = lilBlendColor(col.rgb, _Color3rd.rgb, LIL_SAMPLE_2D(_Main3rdBlendMask,sampler_MainTex,input.uv0).r * _Color3rd.a, _Main3rdTexBlendMode);
+                    }
+
+                    // 4th
+                    UNITY_BRANCH
+                    if(_UseMain4thTex)
+                    {
+                        _Color4th *= LIL_GET_SUBTEX(_Main4thTex,input.uv0);
+                        col.rgb = lilBlendColor(col.rgb, _Color4th.rgb, LIL_SAMPLE_2D(_Main4thBlendMask,sampler_MainTex,input.uv0).r * _Color4th.a, _Main4thTexBlendMode);
+                    }
+
+                    // 5th
+                    UNITY_BRANCH
+                    if(_UseMain5thTex)
+                    {
+                        _Color5th *= LIL_GET_SUBTEX(_Main5thTex,input.uv0);
+                        col.rgb = lilBlendColor(col.rgb, _Color5th.rgb, LIL_SAMPLE_2D(_Main5thBlendMask,sampler_MainTex,input.uv0).r * _Color5th.a, _Main5thTexBlendMode);
                     }
                 #endif
 

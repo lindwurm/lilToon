@@ -260,6 +260,14 @@
 #define LIL_FEATURE_Main3rdBlendMask
 #define LIL_FEATURE_Main3rdDissolveMask
 #define LIL_FEATURE_Main3rdDissolveNoiseMask
+#define LIL_FEATURE_Main4thTex
+#define LIL_FEATURE_Main4thBlendMask
+#define LIL_FEATURE_Main4thDissolveMask
+#define LIL_FEATURE_Main4thDissolveNoiseMask
+#define LIL_FEATURE_Main5thTex
+#define LIL_FEATURE_Main5thBlendMask
+#define LIL_FEATURE_Main5thDissolveMask
+#define LIL_FEATURE_Main5thDissolveNoiseMask
 #define LIL_FEATURE_AlphaMask
 #define LIL_FEATURE_BumpMap
 #define LIL_FEATURE_Bump2ndMap
