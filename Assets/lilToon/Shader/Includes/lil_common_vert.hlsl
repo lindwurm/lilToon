@@ -244,7 +244,7 @@ LIL_V2F_TYPE vert(appdata input)
             }
         #endif
     #endif
-
+    
     //------------------------------------------------------------------------------------------------------------------------------
     // Fog & Lighting
     lilFragData fd = lilInitFragData();
@@ -415,15 +415,15 @@ LIL_V2F_TYPE vert(appdata input)
     //------------------------------------------------------------------------------------------------------------------------------
     // UDIM Discard
     #if defined(LIL_FEATURE_UDIMDISCARD) && !defined(LIL_LITE)
-        if(_UDIMDiscardMode == 0 && _UDIMDiscardCompile == 1 && LIL_CHECK_UDIMDISCARD(input)) // Discard Vertices instead of just pixels
-        {
-            #if defined(LIL_V2F_POSITION_CS)
-                LIL_V2F_OUT_BASE.positionCS = 0.0/0.0;
-            #endif
-            #if defined(LIL_ONEPASS_OUTLINE)
-                LIL_V2F_OUT.positionCSOL = 0.0/0.0;
-            #endif
-        }
+    if(_UDIMDiscardMode == 0 && _UDIMDiscardCompile == 1 && LIL_CHECK_UDIMDISCARD(input)) // Discard Vertices instead of just pixels
+    {
+        #if defined(LIL_V2F_POSITION_CS)
+        LIL_V2F_OUT_BASE.positionCS = 0.0/0.0;
+        #endif
+        #if defined(LIL_ONEPASS_OUTLINE)
+        LIL_V2F_OUT.positionCSOL = 0.0/0.0;
+        #endif
+    }
     #endif
 
     #if defined(LIL_V2F_POSITION_OS)
